@@ -14,4 +14,4 @@ Content-Type: application/json
 }
 
 ### Get Message
-GET {{api}}/messages/123 HTTP/1.1
+GET {{api}}/messages/1 HTTP/1.1

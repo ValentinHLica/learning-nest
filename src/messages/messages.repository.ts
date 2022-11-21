@@ -4,7 +4,7 @@ import { join } from 'path';
 import { MessageAddPayload, MessageItem } from '../types/Messages';
 
 export class MessagesRepository {
-  messagesPath = join(__dirname, '..', 'data', 'messages.json');
+  messagesPath = join('messages.json');
 
   async findAll() {
     const data = JSON.parse(
@@ -19,7 +19,7 @@ export class MessagesRepository {
       readFileSync(this.messagesPath).toString(),
     ) as MessageItem[];
 
-    return data.filter((item) => item.id === id);
+    return data.filter((item) => item.id.toString() === id);
   }
 
   async add(payload: MessageAddPayload) {
